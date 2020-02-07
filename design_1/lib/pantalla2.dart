@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PantallaSeleccion extends StatefulWidget {
   @override
@@ -22,77 +21,81 @@ class _PantallaSeleccionState extends State<PantallaSeleccion> {
       body: CustomPaint(
         painter: BrochaArena(),
         child: SafeArea(
-          child: Column(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(
-                    right: MediaQuery.of(context).size.width * .3),
-                child: Text(
-                  "ESCOGE",
-                  style: TextStyle(
-                      color: Color(0xFFE9D0A0),
-                      fontFamily: "RobotoSlab",
-                      fontSize: MediaQuery.of(context).size.width * .08,
-                      letterSpacing: 20),
-                ),
-              ),
-              Text(
-                "4",
-                style: TextStyle(
-                    color: Color(0xFFBEA573),
-                    fontFamily: "RobotoSlab",
-                    fontWeight: FontWeight.w700,
-                    fontSize: MediaQuery.of(context).size.width * .1),
-              ),
-              Text(
-                "CARRERAS",
-                style: TextStyle(
-                    color: Color(0xFFBEA573),
-                    fontFamily: "RobotoSlab",
-                    fontWeight: FontWeight.w700,
-                    fontSize: MediaQuery.of(context).size.width * .1),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      ContenerCategoria(
-                        multiHeight: .20,
-                        multiWidth: .3,
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .03,
-                        height: MediaQuery.of(context).size.height * .03,
-                      ),
-                      ContenerCategoria(
-                        multiHeight: .28,
-                        multiWidth: .40,
-                      ),
-                    ],
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(
+                      right: MediaQuery.of(context).size.width * .3),
+                  child: Text(
+                    "ESCOGE",
+                    style: TextStyle(
+                        color: Color(0xFFE9D0A0),
+                        fontFamily: "RobotoSlab",
+                        fontSize: MediaQuery.of(context).size.width * .08,
+                        letterSpacing: 20),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(height: MediaQuery.of(context).size.width * .20),
-                      ContenerCategoria(
-                        multiHeight: .28,
-                        multiWidth: .40,
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .05,
-                        height: MediaQuery.of(context).size.height * .05,
-                      ),
-                      ContenerCategoria(
-                        multiHeight: .25,
-                        multiWidth: .3,
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ],
+                ),
+                Text(
+                  "4",
+                  style: TextStyle(
+                      color: Color(0xFFBEA573),
+                      fontFamily: "RobotoSlab",
+                      fontWeight: FontWeight.w700,
+                      fontSize: MediaQuery.of(context).size.width * .1),
+                ),
+                Text(
+                  "CARRERAS",
+                  style: TextStyle(
+                      color: Color(0xFFBEA573),
+                      fontFamily: "RobotoSlab",
+                      fontWeight: FontWeight.w700,
+                      fontSize: MediaQuery.of(context).size.width * .1),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        ContenerCategoria(
+                          multiHeight: .20,
+                          multiWidth: .3,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * .03,
+                          height: MediaQuery.of(context).size.height * .03,
+                        ),
+                        ContenerCategoria(
+                          multiHeight: .28,
+                          multiWidth: .40,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SizedBox(
+                            height: MediaQuery.of(context).size.width * .20),
+                        ContenerCategoria(
+                          multiHeight: .28,
+                          multiWidth: .40,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * .05,
+                          height: MediaQuery.of(context).size.height * .05,
+                        ),
+                        ContenerCategoria(
+                          multiHeight: .25,
+                          multiWidth: .3,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -161,18 +164,6 @@ class ContenerCategoria extends StatelessWidget {
                 spreadRadius: 0,
                 offset: Offset(10, 12))
           ]),
-      child: Center(
-        child: RawMaterialButton(
-          child: Icon(
-            Icons.home,
-            size: 45,
-          ),
-          shape: ,
-          elevation: 2.0,
-          fillColor: Colors.greenAccent,
-          padding: EdgeInsets.all(20.0),
-        ),
-      ),
     );
   }
 }
